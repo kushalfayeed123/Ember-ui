@@ -15,7 +15,7 @@ module.exports = function (app) {
               "name": "Albert Einstein",
               "image": "/images/Einstein.jpg",
               "value": "false",
-              "archived": "false"
+              "archived": false
             }
           },
           {
@@ -25,7 +25,7 @@ module.exports = function (app) {
               "name": "Walt Disney",
               "image": "/images/Walt.jpg",
               "value": "false",
-              "archived": "false"
+              "archived": false
 
             }
           },
@@ -36,7 +36,7 @@ module.exports = function (app) {
               "name": "Bruce Lee",
               "image": "/images/Bruce.jpg",
               "value": "false",
-              "archived": "false"
+              "archived": false
 
             }
           },
@@ -47,7 +47,7 @@ module.exports = function (app) {
               "name": "Neil Armstrong",
               "image": "/images/Neil.jpg",
               "value": "false",
-              "archived": "false"
+              "archived": false
 
             }
           }

@@ -14,7 +14,6 @@ export default class UserModel extends Model {
 
 
   toggleArchive() {
-    // console.log(archived);
     this.archived = !this.archived;
   }
 }

@@ -14,7 +14,8 @@ module.exports = function (app) {
             "attributes": {
               "name": "Albert Einstein",
               "image": "/images/Einstein.jpg",
-              "value": "false"
+              "value": "false",
+              "archived": "false"
             }
           },
           {
@@ -23,7 +24,9 @@ module.exports = function (app) {
             "attributes": {
               "name": "Walt Disney",
               "image": "/images/Walt.jpg",
-              "value": "false"
+              "value": "false",
+              "archived": "false"
+
             }
           },
           {
@@ -32,7 +35,9 @@ module.exports = function (app) {
             "attributes": {
               "name": "Bruce Lee",
               "image": "/images/Bruce.jpg",
-              "value": "false"
+              "value": "false",
+              "archived": "false"
+
             }
           },
           {
@@ -41,7 +46,9 @@ module.exports = function (app) {
             "attributes": {
               "name": "Neil Armstrong",
               "image": "/images/Neil.jpg",
-              "value": "false"
+              "value": "false",
+              "archived": "false"
+
             }
           }
         ]

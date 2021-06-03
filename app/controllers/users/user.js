@@ -15,4 +15,8 @@ export default class UsersUserController extends Controller {
     //  console.log(exception);
     //})
   }
+  @action
+  async modifyArchive() {
+    this.model.toggleArchive();
+  }
 }

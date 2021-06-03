@@ -13,17 +13,35 @@
         <p class="title has-text-white my-2">
           {{@model.name}}
         </p>
-        <p class="subtitle has-text-white my-2">
+        {{!-- <p class="subtitle has-text-white my-2">
           Example Value:
           {{@model.value}}
+        </p> --}}
+        <p class="subtitle has-text-white my-2">
+          Archived:
+          {{@model.archived}}
         </p>
+                {{#if @model.archived}}
+
         <button
           type="button"
           class="button is-pulled-left mt-4"
-          {{on "click" this.modifyValue}}
+          {{on "click" this.modifyArchive}}
         >
-          Change Value
+          Unarchive {{@model.name}}
+       
         </button>
+        {{else}}
+
+        <button
+          type="button"
+          class="button is-pulled-left mt-4"
+          {{on "click" this.modifyArchive}}
+        >
+          Archive {{@model.name}}
+       
+        </button>
+          {{/if}}
 
       </div>
     </div>

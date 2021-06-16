@@ -6,14 +6,16 @@ export default class UserModel extends Model {
   @attr('boolean', { defaultValue: false }) value;
   @attr('boolean', { defaultValue: false }) archived;
 
-
   changeValue() {
     this.value = !this.value;
-
   }
 
-
-  toggleArchive() {
-    this.archived = !this.archived;
+  toggleArchive(id, isArchived) {
+    this.store.findRecord('user', id).then((user) => {
+      // ...after the record has loaded
+      user.archived = isArchived ? false : true;
+      user.save();
+      console.log(user);
+    });
   }
 }

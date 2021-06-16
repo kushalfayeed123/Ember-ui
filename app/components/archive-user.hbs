@@ -1,9 +1,12 @@
+  <p class='subtitle has-text-white my-2'>
+        Archived: {{this.data.archived}}
+      </p>
 <button
         type='button'
         class='button is-pulled-left mt-4'
-        {{on 'click'  (fn this.toggleArchive this.args.data.id this.args.data.archived)}}
+        {{on 'click' this.toggleArchive}}
       >
-        {{#if this.args.data.archived}}
+        {{#if this.data.archived}}
           Unarchive
         {{else}}
           Archive

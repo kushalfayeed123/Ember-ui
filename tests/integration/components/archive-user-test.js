@@ -1,26 +1,30 @@
 import { module, test } from 'qunit';
 import { setupRenderingTest } from 'ember-qunit';
-import { render } from '@ember/test-helpers';
+import { render, click } from '@ember/test-helpers';
 import { hbs } from 'ember-cli-htmlbars';
+import { run } from '@ember/runloop';
+
 
 module('Integration | Component | archive-user', function(hooks) {
   setupRenderingTest(hooks);
 
-  test('it renders', async function(assert) {
+  test('should archive/unarchive selected user', async function(assert) {
     // Set any properties with this.set('myProperty', 'value');
     // Handle any actions with this.set('myAction', function(val) { ... });
 
+
+    // const user = run(() => this.owner.lookup('service:store').createRecord('user'));
+
+    // run(() => user.toggleArchive(1, false));
+    // assert.equal(user.archived, true);
+
     await render(hbs`<ArchiveUser />`);
 
-    assert.equal(this.element.textContent.trim(), '');
+    assert.equal(this.element.querySelector('p').textContent.trim(), 'Archived: false');
 
-    // Template block usage:
-    await render(hbs`
-      <ArchiveUser>
-        template block text
-      </ArchiveUser>
-    `);
+    await click('.button');
 
-    assert.equal(this.element.textContent.trim(), 'template block text');
+    assert.equal(this.element.querySelector('p').textContent.trim(), 'Archived: true');
+
   });
 });

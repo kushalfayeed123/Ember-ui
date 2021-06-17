@@ -37,6 +37,11 @@ module('Acceptance | users', function(hooks) {
     assert.equal(this.element.querySelector('p').textContent.trim(), 'Albert Einstein');
     assert.dom('.subtitle').hasText('Archived: false');
     assert.dom('.is-pulled-left').hasText('Archive');
+    await click('.is-pulled-left')
+    assert.dom('.subtitle').hasText('Archived: true');
+    assert.dom('.is-pulled-left').hasText('Unarchive');
+
+
     assert.dom('.button').hasText('Back to users');
     await click('.button')
     assert.equal(currentURL(), '/users');

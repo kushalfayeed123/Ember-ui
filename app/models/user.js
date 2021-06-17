@@ -11,11 +11,15 @@ export default class UserModel extends Model {
   }
 
   toggleArchive(id, isArchived) {
-    this.store.findRecord('user', id).then((user) => {
-      // ...after the record has loaded
-      user.archived = isArchived ? false : true;
-      user.save();
-      console.log(user);
-    });
+    try {
+      this.store.findRecord('user', id).then((user) => {
+        // ...after the record has loaded
+        user.archived = isArchived ? false : true;
+        user.save();
+        console.log(user.archived);
+      });
+    } catch (e) {
+      // console.log(e);
+    }
   }
 }
